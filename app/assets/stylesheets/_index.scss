@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: powderblue;
+  line-height: 100px;
+  display: flex;
+  &__logo {
+    width: 70%;
+    padding: 0 0 0 45%;
+  }
+  &__post {
+    width: 15%;
+    padding-left: 5%;
+  }
+  &__out {
+    width: 15%;
+    padding-left: 5%;
+  }
+  &__rogin {
+    width: 15%;
+    padding-left: 5%;
+  }
+  &__signapp {
+    width: 15%; 
+    padding-left: 5%;
+  }
+}
+
+.contents {
+  height: calc(100% - 100px);
+  display: flex;
+  .left {
+    height: 100%;
+    width: 200px;
+    background-color: skyblue;
+    &__name {
+      height: 300px;
+      width: 100%;
+    }
+  }
+  .main {
+  height: 100%;
+  width: calc(100% - 400px);
+  background-color: lightcyan;
+  }
+  .ranking {
+    height: 100%;
+    width: 200px;
+    background-color: skyblue;
+  }
+}

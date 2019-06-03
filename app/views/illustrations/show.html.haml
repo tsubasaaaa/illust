@@ -1,0 +1,14 @@
+.main__title
+.main__text
+.main__image
+.comment
+  - if current_user
+    = form_for [@comment] do |f|
+      = f.text_area :comment, class: 'comment__form', placeholder: "コメントする"
+      = f.submit 'send', class: 'comment-btn'
+.comment-list
+  <コメント一覧>
+  - if @comments
+    = @comments.each do |comment|
+      = link_to comment.user.name, "/users/#{comment.user_id}"
+      = comment.comment

@@ -1,5 +1,6 @@
 class IllustrationsController < ApplicationController
   def index
+    @illustrations = Illustration.includes(:user).page(params[:page]).per(5).order("createed_at DESC")
   end
 
   def new
@@ -7,7 +8,7 @@ class IllustrationsController < ApplicationController
   end
 
   def create
-    Illustration.create(illustration_params)
+    Illustration.create(illustration_params, user_id: current_user.id)
   end
 
   def destroy

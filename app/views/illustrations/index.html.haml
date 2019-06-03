@@ -5,17 +5,18 @@
         illumination
     - if user_signed_in?
       .header__post
-        =link_to root_path do
+        =link_to new_illustration_path do
           = fa_icon("arrow-circle-right", text: "投稿する")
       .header__out
         =link_to destroy_user_session_path do
           =fa_icon("sign-out", text: "サインアウト")
-    .header__rogin
-      =link_to new_user_session_path do
-        =fa_icon("sign-in", text: "ログイン")
-    .header__signapp
-      =link_to new_user_registration_path do
-        = fa_icon("sign-in", text: "新規登録")
+    - else
+      .header__rogin
+        =link_to new_user_session_path do
+          =fa_icon("sign-in", text: "ログイン")
+      .header__signapp
+        =link_to new_user_registration_path do
+          = fa_icon("sign-in", text: "新規登録")
   .contents
     .left
       .left__name

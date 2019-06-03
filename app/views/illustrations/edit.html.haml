@@ -1,0 +1,14 @@
+.subject
+  編集する
+.post
+  = form_for [@illustration] do |f|
+    .post__title
+      = f.text_field :title, class: 'title', placeholder: 'タイトル', value: "#{f.title}"
+    .post__text
+      = f.text_field :text, class: 'text', placeholder: 'テキスト', value: "#{f.text}"
+    .post__image
+      = f.label :image, class: 'image', value: "#{f.image}" do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :image, class: 'image__file'
+    .send
+      = f.submit 'send', class: 'submit-btn'

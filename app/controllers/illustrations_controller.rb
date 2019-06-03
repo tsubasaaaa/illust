@@ -27,6 +27,7 @@ class IllustrationsController < ApplicationController
 
   def show
     @illustration = Illustration.find(params[:id])
+    @comment = Comment.new
     @comments = @illustration.comments.includes(:user)
   end
 

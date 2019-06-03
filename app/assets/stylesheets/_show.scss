@@ -1,0 +1,35 @@
+.main__title {
+  height: 60px;
+  width: calc(100% - 500px);
+  margin: 0 auto;
+}
+
+.main__text {
+  height: 60px;
+  width: calc(100% - 500px);
+  margin: 0 auto;
+}
+
+.main__image {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.comment {
+  height: 100px;
+  width: calc(100% - 500px);
+  margin: 0 auto;
+  display: flex;
+  &__form {
+    height: 100%;
+    width: calc(100% - 100px);
+  }
+  &-btn {
+    height: 100%;
+    width: 100px;
+  }
+}
+
+.comment-list {
+}

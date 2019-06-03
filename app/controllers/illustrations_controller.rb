@@ -3,6 +3,7 @@ class IllustrationsController < ApplicationController
   end
 
   def new
+    @illustration = Illustration.new
   end
 
   def create

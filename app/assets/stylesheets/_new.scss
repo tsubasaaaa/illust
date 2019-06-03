@@ -1,0 +1,25 @@
+.subject {
+  height: 100px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post {
+  height: 600px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  &__title {
+    height: 100px;
+    margin: 0 auto;
+  }
+  &__text {
+    height: 300px;
+    margin: 0 auto;
+  }
+  &__image {
+    height: 100px;
+    margin: 0 auto;
+  }
+}

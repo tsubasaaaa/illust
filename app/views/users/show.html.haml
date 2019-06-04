@@ -1,0 +1,13 @@
+.main
+  %p
+    = @name
+    さんの投稿一覧
+  - @illustrations.each do |illustration|
+    .main__title
+      = illustration.title
+    .main__text
+      = illustration.text
+    .main__image
+      = illustration.image
+
+

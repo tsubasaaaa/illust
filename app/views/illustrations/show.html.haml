@@ -1,9 +1,9 @@
-.main__title
-.main__text
-.main__image
+.main__illustration__title
+.main__illustration__text
+.main__illustration__image
 .comment
   - if current_user
-    = form_for [@comment] do |f|
+    = form_for @comment do |f|
       = f.text_area :comment, class: 'comment__form', placeholder: "コメントする"
       = f.submit 'send', class: 'comment-btn'
 .comment-list

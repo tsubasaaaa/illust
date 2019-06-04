@@ -1,6 +1,7 @@
 class IllustrationsController < ApplicationController
   def index
-    @illustrations = Illustration.includes(:user).page(params[:page]).per(5).order("createed_at DESC")
+    @illustrations = Illustration.all.reverse
+    # .includes(:user)
   end
 
   def new
@@ -8,12 +9,13 @@ class IllustrationsController < ApplicationController
   end
 
   def create
-    Illustration.create(illustration_params, user_id: current_user.id)
+    Illustration.create(illustration_params)
   end
 
   def destroy
     illustration = Illustration.find(params[:id])
-    illustration.destroy if illustration.id == current_user.id
+    illustration.destroy if illustration.user_id == current_user.id
+
   end
 
   def edit
@@ -33,7 +35,7 @@ class IllustrationsController < ApplicationController
 
   private
   def illustration_params
-    params.require(:illustration).permit(:title, :text, :image)
+    params.require(:illustration).permit(:title, :text, :image).merge(user_id: current_user.id )
   end
 
   def move_to_index

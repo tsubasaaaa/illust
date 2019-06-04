@@ -1,0 +1,16 @@
+.main__illustration
+  .main__illustration__title
+    = illustration.title
+    -# %span= image_tag 'arrow_top.png'
+    %ul.more_list
+      %li
+        = link_to '詳細', "/illustrations/#{illustration.id}", method: :get
+    - if user_signed_in? && current_user.id == illustration.user_id
+      %li
+        = link_to '編集', "/illustrations/#{illustration.id}/edit", method: :get
+      %li
+        = link_to '削除', "/illustrations/#{illustration.id}", method: :delete
+  .main__illustration__text
+    = illustration.text
+  .main__illustration__image
+    = image_tag illustration.image.url

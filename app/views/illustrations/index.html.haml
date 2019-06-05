@@ -2,7 +2,7 @@
   .left
     .left__name
       - if user_signed_in?
-        = current_user.name
+        = link_to "#{current_user.name}",user_path(current_user.id)
   .main
     = render @illustrations
   .ranking

@@ -3,12 +3,13 @@
 .main__illustration__image
 .comment
   - if current_user
-    = form_for @comment do |f|
-      = f.text_area :comment, class: 'comment__form', placeholder: "コメントする"
+    = form_for [@illustration, @comment] do |f|
+      = f.text_field :comment, class: 'comment-form', placeholder: 'コメントを入力してね'
       = f.submit 'send', class: 'comment-btn'
 .comment-list
   <コメント一覧>
   - if @comments
-    = @comments.each do |comment|
-      = link_to comment.user.name, "/users/#{comment.user_id}"
-      = comment.comment
+    - @comments.each do |comment|
+      .comment-list__row
+        = link_to comment.user.name, "/users/#{comment.user_id}"
+        = ":  #{comment.comment}"

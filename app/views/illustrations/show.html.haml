@@ -1,11 +1,10 @@
-.main__illustration__title
-.main__illustration__text
-.main__illustration__image
+= render @illustration
 .comment
   - if current_user
     = form_for [@illustration, @comment] do |f|
-      = f.text_field :comment, class: 'comment-form', placeholder: 'コメントを入力してね'
-      = f.submit 'send', class: 'comment-btn'
+      %form
+        = f.text_field :comment, class: 'comment-form', placeholder: 'コメントを入力してね'
+        = f.submit 'send', class: 'comment-btn'
 .comment-list
   <コメント一覧>
   - if @comments

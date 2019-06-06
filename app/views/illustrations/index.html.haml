@@ -1,11 +1,16 @@
 .contents
   .left
-    .left__name
-      - if user_signed_in?
-        = link_to "#{current_user.name}",user_path(current_user.id)
+    - if user_signed_in?
+      .left__name
+        = current_user.name
+      .left__page
+        = link_to user_path(current_user.id) do
+          = fa_icon("fort-awesome 2x")
+    .left__search
+      = link_to search_illustrations_path do
+        = fa_icon("search 2x")
   .main
     = render @illustrations
   .ranking
     = fa_icon("star spin")
     .ranking__top
-

@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.create!(comment_params)
-    # respond_to do |format|
-    #   format.html {redirect_to illustration_path(params[:illustration_id])}
-    #   format.json
-    # end
+    respond_to do |format|
+      format.html {redirect_to illustration_path(params[:illustration_id])}
+      format.json
+    end
   end
 
   private

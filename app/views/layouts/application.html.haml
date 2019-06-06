@@ -17,7 +17,7 @@
           =link_to new_illustration_path do
             = fa_icon("arrow-circle-right", text: "投稿する")
         .header__out
-          =link_to destroy_user_session_path do
+          =link_to destroy_user_session_path, method: :delete do
             =fa_icon("sign-out", text: "サインアウト")
       - else
         .header__rogin

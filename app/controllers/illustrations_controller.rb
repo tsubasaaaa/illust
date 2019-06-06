@@ -33,6 +33,18 @@ class IllustrationsController < ApplicationController
     @comments = @illustration.comments.includes(:user)
   end
 
+  def search
+  end
+
+  def search_list
+    @illustrations = Illustration.where('title LIKE(?)', "%#{params[:keyword]}%" )
+    respond_to do |format|
+      format.html
+      format.json { render 'search-list.json.jbuilder' }
+      # { render 'search.json.jbuilder' }
+    end
+  end
+
   private
   def illustration_params
     params.require(:illustration).permit(:title, :text, :image).merge(user_id: current_user.id )
